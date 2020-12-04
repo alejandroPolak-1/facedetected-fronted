@@ -6,6 +6,9 @@ import Particles from 'react-particles-js'
 import './App.css'
 import Logo from '../components/Logo/Logo'
 
+console.log(process.env.REACT_APP_API_KEY)
+console.log(process.env)
+
 const particlesOption= {
   particles: {
       number: {
