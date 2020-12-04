@@ -89,7 +89,7 @@ class App extends Component {
       .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
       .then((response) => {
         if (response) {
-          fetch(process.env.REACT_APP_API_IMAGE, {
+          fetch(`${process.env.FRONTED_URL}/image`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
