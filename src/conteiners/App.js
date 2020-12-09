@@ -83,6 +83,7 @@ class App extends Component {
     this.setState({input: event.target.value})
   }
 
+  //OnPictureSubmit
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
     app.models
@@ -100,8 +101,8 @@ class App extends Component {
             // .then(console.log)
             .then((count) => {
               console.log(count)
-              // this.setState(Object.assign(this.state.user, {entries: count}))
-              // this.setState({user: {entries: count}})
+              this.setState(Object.assign(this.state.user, {entries: count}))
+              // this.setState({user: {entries: count}}) //da user undefined
             })
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
