@@ -90,6 +90,7 @@ class App extends Component {
     this.setState({imageUrl: this.state.input})
     app.models
       .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+      // .predict('c0c0ac362b03416da06ab3fa36fb58e3', req.body.input) //otra forma de llamar al modelo
       .then((response) => {
         if (response) {
           fetch(`${process.env.REACT_APP_API_URL}image`, {
@@ -106,6 +107,7 @@ class App extends Component {
               this.setState(Object.assign(this.state.user, {entries: count}))
               // this.setState({user: {entries: count}}) //da user undefined
             })
+            .catch(console.log)
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
