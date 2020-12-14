@@ -26,7 +26,7 @@ class Register extends Component {
     // console.log(this.state)
     // console.log(`${process.env.REACT_APP_API_URL}register`)
     // this.props.onRouteChange('home')
-    fetch(`${process.env.REACT_APP_API_URL}register`, {
+    fetch(`https://facedetected-api.herokuapp.com/register`, {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
